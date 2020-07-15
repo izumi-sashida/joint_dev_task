@@ -72,8 +72,9 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-  programming_languages = %w(Ruby Php Python Javascript)
-  upper_case_programming_languages = %w(RUBY PHP PYTHON JAVASCRIPT)
+  upper_case_programming_languages = %w(ruby php python javascript)
+  p programming_languages.map {|item| item.capitalize}
+  p upper_case_programming_languages.map {|item| item.upcase}
 
   # 以下は変更しないで下さい
   p programming_languages
