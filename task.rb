@@ -106,6 +106,12 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
+  puts "ユーザーの趣味一覧"
+  sports[3] = "フットサル"
+  sports[6] = "ボルダリング"
+  sports.each.with_index(1) do |sport,index|
+  puts "No#{index} #{sport}"
+  end
 
 end
 
@@ -113,6 +119,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
+  puts data[:user][:name]
 
 end
 
