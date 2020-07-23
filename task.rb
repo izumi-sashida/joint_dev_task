@@ -107,9 +107,7 @@ def q11
 
   # 以下に回答を記載
   puts "ユーザーの趣味一覧"
-  sports[3] = "フットサル"
-  sports[6] = "ボルダリング"
-  sports.each.with_index(1) do |sport,index|
+  sports.flatten.uniq.each.with_index(1) do |sport,index|
   puts "No#{index} #{sport}"
   end
 
@@ -128,6 +126,7 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
+  puts user_data.merge!(update_data)
 
 end
 
@@ -135,6 +134,8 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
+  array = data.keys
+  puts array
 
 end
 
