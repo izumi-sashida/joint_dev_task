@@ -166,11 +166,11 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  attr_accessor :name, :age, :gender
-  def initialize(name:, age:, gender:)
-    @name = name
-    @age = age
-    @gender = gender
+  #attr_accessor :name, :age, :gender
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+    @gender = params[:gender]
   end
   def info
     puts <<~TEXT
@@ -194,7 +194,7 @@ end
 
 class UserQ18
   # 以下に回答を記載
-  attr_accessor :name, :age
+  #attr_accessor :name, :age
   def initialize(name:, age:)
     @name = name
     @age = age
@@ -220,8 +220,9 @@ end
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name)
+  attr_reader :name
+  attr_writer :name
+  def initialize(name:)
     @name = name
   end
 end
@@ -234,12 +235,31 @@ end
 
 class UserQ20
   # 以下に回答を記載
-
+  attr_reader :name, :age
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+  end
 end
 
 class Zoo
   # 以下に回答を記載
-
+  def initialize(**params)
+    @name = params[:name]
+    @entry_fee = params[:entry_fee]
+  end
+  def info_entry_fee(user)
+    case user.age
+    when 0..5
+      puts "#{user.name}さんの入場料金は #{@entry_fee[:infant]} 円です。"
+    when 6..12
+      puts "#{user.name}さんの入場料金は #{@entry_fee[:children]} 円です。"  
+    when 13..64
+      puts "#{user.name}さんの入場料金は #{@entry_fee[:adult]} 円です。"
+    when 65..120
+      puts "#{user.name}さんの入場料金は #{@entry_fee[:senior]} 円です。"
+    end
+  end
 end
 
 
